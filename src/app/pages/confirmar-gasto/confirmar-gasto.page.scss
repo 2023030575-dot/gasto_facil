@@ -1,0 +1,469 @@
+.confirm-content {
+  --background: #f5f7fb;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.confirm-container {
+  padding: 82px 20px 130px;
+}
+
+/* =========================
+   TITULO
+========================= */
+
+.title-section {
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.title-section h1 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 800;
+  color: #111827;
+}
+
+.title-section p {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* =========================
+   BADGE IA
+========================= */
+
+.ai-badge {
+  width: fit-content;
+  margin: 0 auto 18px;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  background: #d9ffe8;
+  color: #118a51;
+
+  padding: 8px 14px;
+  border-radius: 999px;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.ai-badge ion-icon {
+  font-size: 15px;
+}
+
+/* =========================
+   TICKET
+========================= */
+
+.ticket-card {
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  padding-bottom: 8px;
+
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.04);
+
+  margin-bottom: 18px;
+}
+
+.ticket-card img {
+  width: 100%;
+  height: 165px;
+  object-fit: cover;
+  display: block;
+}
+
+.view-ticket-btn {
+  --color: #4f78d6;
+
+  text-transform: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* =========================
+   TARJETAS
+========================= */
+
+.form-card {
+  background: #fff;
+
+  border-radius: 22px;
+
+  padding: 16px;
+  margin-bottom: 14px;
+
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.035);
+}
+
+.form-card label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  color: #9ca3af;
+}
+
+/* =========================
+   MONTO
+========================= */
+
+.amount-card {
+  padding-bottom: 18px;
+}
+
+.amount {
+  font-size: 44px;
+  font-weight: 800;
+  color: #005bd8;
+  line-height: 1;
+}
+
+/* =========================
+   INPUTS VISUALES
+========================= */
+
+.input-box {
+  background: #f0f2f6;
+
+  min-height: 48px;
+
+  border-radius: 14px;
+
+  padding: 0 14px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.input-box ion-icon {
+  margin-right: 10px;
+  font-size: 19px;
+  color: #6b7280;
+}
+
+.input-box span {
+  font-size: 14px;
+  color: #374151;
+  font-weight: 500;
+}
+
+.input-box input,
+.input-box textarea {
+  flex: 1;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+
+  font-family: inherit;
+}
+
+.input-box textarea {
+  resize: none;
+  min-height: 48px;
+  padding: 14px 0;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.double-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.double-grid .form-card {
+  margin-bottom: 14px;
+}
+
+/* =========================
+   CATEGORIA
+========================= */
+
+.category-badge {
+  background: #dff8e8;
+
+  border: 1px solid #b6ecc8;
+
+  color: #14804a;
+
+  min-height: 48px;
+
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.category-badge ion-icon {
+  font-size: 18px;
+}
+
+/* =========================
+   BOTONES
+========================= */
+
+.buttons-section {
+  margin-top: 24px;
+}
+
+.save-btn {
+  height: 54px;
+  margin-bottom: 12px;
+
+  --border-radius: 28px;
+  --background: #005bd8;
+  --background-activated: #0047ac;
+
+  --box-shadow: 0 10px 20px rgba(0, 91, 216, 0.22);
+
+  font-size: 15px;
+  font-weight: 700;
+
+  text-transform: none;
+}
+
+.edit-btn {
+  height: 54px;
+  margin-bottom: 12px;
+
+  --border-radius: 28px;
+  --border-color: #8cb5ff;
+  --color: #005bd8;
+  --background: #ffffff;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  text-transform: none;
+}
+
+.cancel-btn {
+  height: 54px;
+
+  --border-radius: 28px;
+  --border-color: #ff8c8c;
+  --color: #d80000;
+  --background: #ffffff;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  text-transform: none;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 380px) {
+
+  .confirm-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .amount {
+    font-size: 38px;
+  }
+
+  .double-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.amount-card input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+
+  font-size: 44px;
+  font-weight: 800;
+  color: #005bd8;
+  line-height: 1;
+}
+
+.category-select-wrapper {
+  width: 100%;
+  min-height: 48px;
+
+  border-radius: 12px;
+  border: 1px solid #b6ecc8;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 12px;
+}
+
+.category-select-wrapper select {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+input[type="date"] {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.ticket-card img {
+  width: 100%;
+  height: 165px;
+}
+
+input[readonly] {
+  opacity: 0.8;
+}
+
+.input-box select {
+  flex: 1;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+
+  font-family: inherit;
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.money-input {
+  display: flex;
+  align-items: center;
+  background: #f0f2f6;
+  border-radius: 14px;
+  padding: 0 14px;
+  min-height: 48px;
+}
+
+.money-input .prefix {
+  font-size: 20px;
+  font-weight: 700;
+  color: #005bd8;
+  margin-right: 6px;
+}
+
+.money-input input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.ticket-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.ticket-modal {
+  position: relative;
+  max-width: 92%;
+  max-height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ticket-modal img {
+  max-width: 100%;
+  max-height: 90vh;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  transform: scale(1);
+  animation: zoomIn 0.2s ease-in-out;
+}
+
+.close-btn {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn ion-icon {
+  font-size: 26px;
+  color: #111;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+input:disabled,
+textarea:disabled,
+select:disabled,
+input[readonly] {
+
+  background: #e5e7eb !important;
+  color: #6b7280 !important;
+
+  cursor: not-allowed;
+
+  opacity: 1;
+
+}

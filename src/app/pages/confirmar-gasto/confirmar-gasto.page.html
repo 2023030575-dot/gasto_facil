@@ -1,0 +1,218 @@
+<ion-content class="confirm-content">
+
+  @if (form) {
+    <form [formGroup]="form">
+
+      <div class="confirm-container">
+
+        <!-- TÍTULO -->
+        <section class="title-section">
+          <h1>Confirmar gasto</h1>
+          <p>Revisa los datos detectados antes de guardar</p>
+        </section>
+
+        <!-- BADGE IA -->
+        <div class="ai-badge">
+          <ion-icon name="sparkles"></ion-icon>
+          Datos obtenidos por IA
+        </div>
+
+        <!-- IMAGEN DEL TICKET -->
+        <section class="ticket-card">
+
+          <img [src]="imagen">
+
+          <ion-button
+            fill="clear"
+            size="small"
+            class="view-ticket-btn"
+            (click)="abrirTicket()">
+
+            <ion-icon slot="start" name="eye-outline"></ion-icon>
+            Ver ticket original
+
+          </ion-button>
+
+        </section>
+
+        <!-- MONTO -->
+        <section class="form-card amount-card">
+
+          <label>Monto total</label>
+
+          <div class="money-input">
+            <span class="prefix">$</span>
+
+            <input
+              type="number"
+              formControlName="monto"
+            >
+          </div>
+
+        </section>
+
+        <!-- ESTABLECIMIENTO -->
+        <section class="form-card">
+
+          <label>Establecimiento</label>
+
+          <div class="input-box">
+            <ion-icon name="storefront-outline"></ion-icon>
+            <input
+              formControlName="establecimiento"
+              [readonly]="!modoEdicion"
+            >
+          </div>
+
+        </section>
+
+        <!-- CONCEPTO -->
+        <section class="form-card">
+
+          <label>Concepto</label>
+
+          <div class="input-box">
+            <ion-icon name="bag-handle-outline"></ion-icon>
+            <input formControlName="concepto">
+          </div>
+
+        </section>
+
+        <!-- GRID -->
+        <div class="double-grid">
+
+          <!-- FECHA -->
+          <section class="form-card">
+
+            <label>Fecha</label>
+
+            <div class="input-box">
+              <ion-icon name="calendar-outline"></ion-icon>
+              <input
+                type="date"
+                formControlName="fecha_gasto">
+            </div>
+
+          </section>
+
+          <!-- CATEGORÍA -->
+          <section class="form-card category-card">
+
+            <label>Categoría sugerida</label>
+
+            <div
+              class="category-select-wrapper"
+              [ngClass]="categoriaSeleccionada.color">
+
+              <select
+                formControlName="categoria"
+                [ngClass]="categoriaSeleccionada.color">
+
+                @for (categoria of categorias; track categoria.id_categoria) {
+                  <option [value]="categoria.nombre_categoria">
+                    {{ categoria.nombre_categoria }}
+                  </option>
+                }
+
+              </select>
+
+            </div>
+
+          </section>
+
+        </div>
+
+        <!-- MÉTODO DE PAGO -->
+        <section class="form-card">
+
+          <label>Método de pago</label>
+
+          <div class="input-box">
+            <ion-icon name="card-outline"></ion-icon>
+
+            <select formControlName="metodo_pago">
+              <option value="EFECTIVO">EFECTIVO</option>
+              <option value="TARJETA DEBITO">TARJETA DEBITO</option>
+              <option value="TARJETA CREDITO">TARJETA CREDITO</option>
+            </select>
+
+          </div>
+
+        </section>
+
+        <!-- NOTAS -->
+        <section class="form-card">
+
+          <label>Notas</label>
+
+          <div class="input-box">
+            <ion-icon name="document-text-outline"></ion-icon>
+            <textarea
+              formControlName="notas"
+            ></textarea>
+          </div>
+
+        </section>
+
+        <!-- BOTONES -->
+        <section class="buttons-section">
+
+          <ion-button
+            expand="block"
+            class="save-btn"
+            (click)="guardarGasto()"
+          >
+
+            Guardar gasto
+
+          </ion-button>
+
+          <ion-button
+            expand="block"
+            fill="outline"
+            class="edit-btn"
+            (click)="habilitarEdicion()"
+          >
+
+            Corregir manualmente
+
+          </ion-button>
+
+          <ion-button
+            expand="block"
+            fill="outline"
+            class="cancel-btn"
+            (click)="cancelar()"
+          >
+
+            Cancelar
+
+          </ion-button>
+
+        </section>
+
+      </div>
+    </form>
+  }
+
+</ion-content>
+
+@if (mostrarTicket) {
+  <div class="ticket-overlay" (click)="cerrarTicket()">
+
+    <div class="ticket-modal" (click)="$event.stopPropagation()">
+
+      <img [src]="imagen" alt="Ticket completo" />
+
+      <ion-button
+        class="close-btn"
+        fill="clear"
+        (click)="cerrarTicket()">
+
+        <ion-icon name="close-outline"></ion-icon>
+      </ion-button>
+
+    </div>
+
+  </div>
+}

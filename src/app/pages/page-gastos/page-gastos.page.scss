@@ -1,0 +1,319 @@
+.gastos-content {
+  --background: #f5f7fb;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/*
+  Este padding-top evita que el contenido se esconda debajo
+  del header fijo que ya hicieron tus compañeros.
+*/
+.gastos-container {
+  padding: 82px 14px 135px;
+}
+
+/* =========================
+   TÍTULO
+========================= */
+
+.title-section h1 {
+  margin: 0 0 14px;
+  font-size: 24px;
+  font-weight: 800;
+  color: #111827;
+}
+
+/* =========================
+   BUSCADOR
+========================= */
+
+.search-box {
+  height: 48px;
+  background: #f0f2f6;
+  border-radius: 14px;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.search-box ion-icon {
+  font-size: 20px;
+  color: #b4bdcc;
+  margin-right: 10px;
+}
+
+.search-box input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: #374151;
+}
+
+.search-box input::placeholder {
+  color: #8c95a5;
+}
+
+/* =========================
+   FILTROS
+========================= */
+
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 22px;
+  overflow-x: auto;
+  padding-bottom: 5px;
+}
+
+.filters::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-btn {
+  height: 34px;
+  padding: 0 18px;
+  border: none;
+  outline: none;
+  border-radius: 18px;
+  background: #e9edf2;
+  color: #4b5563;
+  font-size: 13px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.filter-btn ion-icon {
+  font-size: 15px;
+}
+
+.filter-btn.active {
+  background: #005bd8;
+  color: #ffffff;
+  box-shadow: 0 6px 14px rgba(0, 91, 216, 0.25);
+}
+
+/* =========================
+   LISTA DE GASTOS
+========================= */
+
+.expenses-list ion-list {
+  background: transparent;
+  padding: 0;
+}
+
+ion-item-sliding {
+  margin-bottom: 14px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: transparent;
+}
+
+.expense-card {
+  --background: #ffffff;
+  --padding-start: 14px;
+  --padding-end: 14px;
+  --inner-padding-end: 0;
+  --min-height: 76px;
+
+  border-radius: 18px;
+  margin: 0;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.035);
+}
+
+.expense-icon {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 13px;
+}
+
+.expense-icon ion-icon {
+  font-size: 21px;
+}
+
+.expense-info {
+  width: 100%;
+}
+
+.expense-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.expense-main h2 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: #111827;
+}
+
+.expense-main span {
+  font-size: 15px;
+  font-weight: 500;
+  color: #111827;
+}
+
+.expense-detail {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.expense-detail p {
+  margin: 0;
+  font-size: 11px;
+  color: #7b8494;
+}
+
+.tag {
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.category-chip{
+
+  --background: transparent;
+
+  margin:0;
+
+  height:28px;
+
+  font-size:10px;
+
+  font-weight:600;
+
+}
+
+/* =========================
+   COLORES POR CATEGORÍA
+========================= */
+
+.expense-icon.red {
+  background: #fff0f0;
+  color: #c04343;
+}
+
+.expense-icon.green {
+  background: #eaf8f0;
+  color: #16834b;
+}
+
+.expense-icon.blue {
+  background: #edf4ff;
+  color: #0b63d8;
+}
+
+.expense-icon.orange {
+  background: #fff4e5;
+  color: #e28a00;
+}
+
+.expense-icon.purple {
+  background: #f2eaff;
+  color: #7c3aed;
+}
+
+.expense-icon.yellow {
+  background: #fff7d6;
+  color: #c98a00;
+}
+
+.red-tag {
+  background: #ffe4e4;
+  color: #c04343;
+}
+
+.green-tag {
+  background: #dcf8e8;
+  color: #16834b;
+}
+
+.blue-tag {
+  background: #dfeeff;
+  color: #0b63d8;
+}
+
+.orange-tag {
+  background: #ffe9c7;
+  color: #e28a00;
+}
+
+.purple-tag {
+  background: #eadcff;
+  color: #7c3aed;
+}
+
+.yellow-tag {
+  background: #fff0b8;
+  color: #c98a00;
+}
+
+/* =========================
+   BOTONES DE SWIPE
+========================= */
+
+ion-item-options {
+  border-radius: 0 18px 18px 0;
+  overflow: hidden;
+}
+
+ion-item-option {
+  width: 62px;
+}
+
+ion-item-option ion-icon {
+  font-size: 22px;
+}
+
+/* =========================
+   MENSAJE INFERIOR
+========================= */
+
+.empty-message {
+  text-align: center;
+  margin-top: 34px;
+}
+
+.empty-circle {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: #e9f0f2;
+  margin: 0 auto 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-circle ion-icon {
+  font-size: 35px;
+  color: #9fc5c9;
+}
+
+.empty-message p {
+  margin: 0 0 9px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.empty-message a {
+  text-decoration: none;
+  font-size: 13px;
+  color: #0b63d8;
+  font-weight: 500;
+}

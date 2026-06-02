@@ -1,0 +1,129 @@
+<ion-content class="scan-content">
+
+  <div class="scan-container">
+
+    <!-- ÁREA VISUAL DEL ESCÁNER -->
+    <section class="scanner-card">
+
+      <div class="scanner-scene">
+
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+
+          <div class="ticket-paper">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+
+        <div class="scan-corners">
+          <span class="corner top-left"></span>
+          <span class="corner top-right"></span>
+          <span class="corner bottom-left"></span>
+          <span class="corner bottom-right"></span>
+        </div>
+
+        <div class="scan-line"></div>
+
+        <div class="scan-label">
+          Alinea el ticket con el recuadro
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- BOTONES DE ACCIÓN -->
+    <section class="scan-buttons">
+
+      <button
+        class="primary-btn"
+        type="button"
+        (click)="tomarFoto()">
+
+        <ion-icon name="camera-outline"></ion-icon>
+
+        Tomar foto
+
+      </button>
+
+      <button
+        class="secondary-btn"
+        type="button"
+        (click)="abrirGaleria()">
+
+        <ion-icon name="image-outline"></ion-icon>
+
+        Galería
+
+      </button>
+
+    </section>
+
+
+
+    <!-- CAPTURA RECIENTE -->
+    @if (imagenActual) {
+
+      <section class="recent-capture">
+
+        <div class="capture-preview">
+
+          <img
+            [src]="imagenActual"
+            alt="Ticket">
+
+        </div>
+
+        <div class="capture-info">
+
+          <h3>Captura reciente</h3>
+
+          <p>{{ nombreImagen }}</p>
+
+        </div>
+
+        <button
+          class="delete-btn"
+          type="button"
+          (click)="eliminarCaptura()">
+
+          <ion-icon name="trash-outline"></ion-icon>
+
+        </button>
+
+      </section>
+
+    }
+
+    <!-- BOTÓN ANALIZAR -->
+    <ion-button
+      expand="block"
+      class="analyze-btn"
+      [disabled]="!base64Image || isAnalyzing"
+      (click)="analizarTicket()">
+
+      <ion-icon
+        [name]="isAnalyzing ? 'hourglass-outline' : 'sparkles-outline'"
+        slot="start">
+      </ion-icon>
+
+      {{ isAnalyzing ? 'Analizando...' : 'Analizar con IA' }}
+
+    </ion-button>
+
+    <!-- TEXTO INFORMATIVO -->
+    <section class="ia-message">
+      <p>
+        Nuestra IA detectará<br>
+        automáticamente montos, fechas y<br>
+        categorías para ti.
+      </p>
+    </section>
+
+  </div>
+
+</ion-content>

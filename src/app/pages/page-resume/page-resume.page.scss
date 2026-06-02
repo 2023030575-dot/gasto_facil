@@ -1,0 +1,357 @@
+.resume-content {
+  --background: #f5f7fb;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/*
+  Padding para respetar header y tabs fijos.
+  Si el título queda muy pegado arriba, sube 82px a 90px.
+*/
+.resume-container {
+  padding: 82px 20px 135px;
+  box-sizing: border-box;
+}
+
+/* =========================
+   TÍTULO
+========================= */
+
+.title-section {
+  margin-bottom: 18px;
+}
+
+.title-section h1 {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 800;
+  color: #111827;
+}
+
+.title-section p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #4b5563;
+}
+
+/* =========================
+   TOTAL ACUMULADO
+========================= */
+
+.total-card {
+  background: linear-gradient(135deg, #005bd8, #0b63d8);
+  color: #ffffff;
+  border-radius: 24px;
+  padding: 24px 22px;
+  margin-bottom: 24px;
+  box-shadow: 0 12px 25px rgba(0, 91, 216, 0.22);
+}
+
+.total-card p {
+  margin: 0 0 8px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.4px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.total-card h2 {
+  margin: 0;
+  font-size: 35px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.total-card span {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.17);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* =========================
+   GRÁFICA DONA
+========================= */
+
+.chart-card {
+  background: #ffffff;
+  border-radius: 26px;
+  min-height: 210px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.035);
+}
+
+.donut-chart {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #005bd8 0deg 126deg,
+    #087a3e 126deg 212deg,
+    #a83232 212deg 295deg,
+    #7d8491 295deg 360deg
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.donut-chart::before {
+  content: '';
+  position: absolute;
+  width: 86px;
+  height: 86px;
+  background: #ffffff;
+  border-radius: 50%;
+}
+
+.donut-center {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.donut-center p {
+  margin: 0;
+  font-size: 14px;
+  color: #374151;
+}
+
+.donut-center strong {
+  display: block;
+  margin-top: 2px;
+  font-size: 14px;
+  color: #111827;
+}
+
+/* =========================
+   CATEGORÍA PRINCIPAL
+========================= */
+
+.top-category-card {
+  background: #86f5a9;
+  border-radius: 26px;
+  padding: 22px;
+  margin-bottom: 26px;
+  color: #087a3e;
+  overflow: hidden;
+}
+
+.category-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(8, 122, 62, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.category-icon ion-icon {
+  font-size: 22px;
+  color: #087a3e;
+}
+
+.top-category-card p {
+  margin: 0 0 8px;
+  font-size: 13px;
+}
+
+.top-category-card h3 {
+  margin: 0 0 18px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.progress-track {
+  width: 100%;
+  height: 7px;
+  border-radius: 20px;
+  background: rgba(8, 122, 62, 0.13);
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 35%;
+  height: 100%;
+  border-radius: 20px;
+  background: #087a3e;
+}
+
+/* =========================
+   DESGLOSE
+========================= */
+
+.breakdown-section {
+  margin-bottom: 26px;
+}
+
+.breakdown-section h2 {
+  margin: 0 0 14px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #6b7280;
+}
+
+.category-row {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 13px 14px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.035);
+}
+
+.row-icon {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 13px;
+}
+
+.row-icon ion-icon {
+  font-size: 20px;
+}
+
+.row-icon.blue {
+  background: #edf4ff;
+  color: #005bd8;
+}
+
+.row-icon.red {
+  background: #fff0f0;
+  color: #c04343;
+}
+
+.row-icon.gray {
+  background: #f0f2f6;
+  color: #6b7280;
+}
+
+.row-icon.green {
+  background: #eaf8f0;
+  color: #16834b;
+}
+
+.row-info {
+  flex: 1;
+}
+
+.row-info h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #111827;
+}
+
+.row-info p {
+  margin: 3px 0 0;
+  font-size: 12px;
+  color: #4b5563;
+}
+
+.category-row span {
+  font-size: 13px;
+  font-weight: 500;
+  color: #111827;
+}
+
+/* =========================
+   MENSAJE FINAL
+========================= */
+
+.advice-card {
+  background: #eef0f2;
+  border-radius: 24px;
+  padding: 18px;
+  min-height: 112px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.advice-text {
+  flex: 1;
+}
+
+.advice-text h3 {
+  margin: 0 0 7px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #111827;
+}
+
+.advice-text p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.35;
+  color: #4b5563;
+}
+
+.advice-figure {
+  width: 70px;
+  height: 70px;
+  min-width: 70px;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #c7d6da, #eef5f4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coin {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #ffe9a8, #d89a2b);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.16);
+}
+
+/* =========================
+   TELÉFONOS PEQUEÑOS
+========================= */
+
+@media (max-width: 380px) {
+  .resume-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .total-card h2 {
+    font-size: 32px;
+  }
+
+  .chart-card {
+    min-height: 195px;
+  }
+
+  .donut-chart {
+    width: 140px;
+    height: 140px;
+  }
+
+  .donut-chart::before {
+    width: 80px;
+    height: 80px;
+  }
+
+  .advice-figure {
+    width: 62px;
+    height: 62px;
+    min-width: 62px;
+  }
+}

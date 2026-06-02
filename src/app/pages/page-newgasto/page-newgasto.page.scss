@@ -1,0 +1,296 @@
+.newgasto-content {
+  --background: #f5f7fb;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/*
+  Padding para respetar header y tabs fijos.
+*/
+.newgasto-container {
+  padding: 82px 20px 135px;
+  box-sizing: border-box;
+}
+
+/* =========================
+   TÍTULO
+========================= */
+
+.title-section {
+  margin-bottom: 22px;
+}
+
+.title-section h1 {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 800;
+  color: #111827;
+}
+
+.title-section p {
+  margin: 5px 0 0;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* =========================
+   FORMULARIO
+========================= */
+
+.gasto-form {
+  width: 100%;
+}
+
+.form-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 15px 14px;
+  margin-bottom: 16px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.035);
+}
+
+.form-card label {
+  display: block;
+  margin-bottom: 9px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+/* === Asegura que el estado inválido se quede fijo y no se quite al hacer foco === */
+
+.input-box.input-invalid {
+  border: 1px solid #dc2626 !important; /* Borde rojo de advertencia */
+  background: #fef2f2 !important;       /* Fondo sutilmente rosado */
+  
+  ion-icon {
+    color: #dc2626 !important;          /* Icono se queda rojo */
+  }
+
+  /* Fuerza a los componentes de Ionic (inputs y selects) a mantener 
+    el fondo y los colores de error incluso si están activos (focused)
+  */
+  ion-input, ion-select {
+    --background: transparent !important;
+    --color: #dc2626 !important;       /* Opcional: pinta el texto que escribe en rojo */
+    background: transparent !important;
+  }
+}
+
+/* Estilo para congelar el comportamiento nativo de enfoque de Ionic dentro del error */
+.input-box.input-invalid ion-input {
+  --border-color: transparent !important;
+  --box-shadow: none !important;
+  --highlight-color-focused: transparent !important; /* Quita la línea azul/verde nativa de Ionic */
+}
+
+/* Mantén tus otros estilos igual */
+.server-error-box {
+  background: #fff5f5;
+  border-radius: 12px;
+  padding: 2px 14px;
+  margin-bottom: 15px;
+  border-left: 4px solid #dc2626;
+  
+  p {
+    margin: 8px 0;
+    font-size: 13px;
+    font-weight: 500;
+  }
+}
+
+.save-btn[disabled] {
+  opacity: 0.6;
+}
+/* =========================
+   INPUTS
+========================= */
+
+.input-box {
+  min-height: 48px;
+  background: #f0f2f6;
+  border-radius: 14px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+}
+
+.input-box ion-icon {
+  font-size: 20px;
+  color: #6b7280;
+  margin-right: 10px;
+}
+
+.input-box ion-input,
+.input-box ion-select {
+  --padding-start: 0;
+  --padding-end: 0;
+  --placeholder-color: #8c95a5;
+  --placeholder-opacity: 1;
+
+  width: 100%;
+  font-size: 14px;
+  color: #111827;
+}
+
+.amount-box ion-icon {
+  color: #005bd8;
+}
+
+.amount-box ion-input {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.metodo-pago-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+  overflow-x: auto; /* Por si añades más en pantallas chicas */
+  padding-bottom: 4px;
+  
+  /* Quitamos la barra de scroll visual de los chips si se desbordan */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.pago-chip {
+  /* Botón por defecto (Gris desmarcado) */
+  background: #f1f3f5; 
+  color: #343a40;
+  border: 1px solid transparent;
+  padding: 12px 22px;
+  border-radius: 25px; /* Hace el efecto píldora idéntico a tu foto */
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  outline: none;
+  white-space: nowrap;
+
+  /* Estado cuando este chip es el seleccionado */
+  &.pago-activo {
+    background: #68f7ad !important; /* El verde brillante de tu captura */
+    color: #064e29 !important;      /* Texto verde oscuro para contraste y legibilidad */
+    border: 1px solid #22c55e;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(104, 247, 173, 0.3); /* Pequeño brillo estético */
+  }
+}
+/* =========================
+   TEXTAREA
+========================= */
+
+.textarea-box {
+  background: #f0f2f6;
+  border-radius: 14px;
+  padding: 8px 12px;
+}
+
+.textarea-box ion-textarea {
+  --padding-start: 0;
+  --padding-end: 0;
+  --placeholder-color: #8c95a5;
+  --placeholder-opacity: 1;
+
+  font-size: 14px;
+  color: #111827;
+}
+
+/* =========================
+   BOTONES
+========================= */
+
+.buttons-section {
+  margin-top: 24px;
+}
+
+.save-btn {
+  height: 52px;
+  margin-bottom: 12px;
+
+  --border-radius: 26px;
+  --background: #005bd8;
+  --background-activated: #0047ac;
+  --box-shadow: 0 8px 18px rgba(0, 91, 216, 0.25);
+
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: none;
+}
+
+.cancel-btn {
+  height: 52px;
+
+  --border-radius: 26px;
+  --border-color: #d0d6df;
+  --color: #005bd8;
+  --background: #ffffff;
+  --background-activated: #eef4ff;
+
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: none;
+}
+
+/* =========================
+   TELÉFONOS PEQUEÑOS
+========================= */
+
+@media (max-width: 380px) {
+  .newgasto-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .title-section h1 {
+    font-size: 23px;
+  }
+
+  .form-card {
+    padding: 14px 12px;
+  }
+}
+
+/* =========================
+   TARJETA ESCANEAR TICKET
+========================= */
+
+.scan-help-card {
+  background: #dfffe9;
+  border-radius: 22px;
+  padding: 18px 16px;
+  margin-top: 20px;
+  text-align: center;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.035);
+}
+
+.scan-help-card p {
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #064e3b;
+  font-weight: 500;
+}
+
+.scan-ticket-btn {
+  height: 34px;
+  margin: 0 auto;
+
+  --color: #005bd8;
+  --background: transparent;
+  --background-activated: transparent;
+  --box-shadow: none;
+  --padding-start: 0;
+  --padding-end: 0;
+
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: none;
+}
+
+.scan-ticket-btn ion-icon {
+  font-size: 18px;
+  color: #005bd8;
+}

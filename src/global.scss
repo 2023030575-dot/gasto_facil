@@ -35,3 +35,290 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import '@ionic/angular/css/palettes/dark.system.css';
+
+/* ========= COLORES UNIVERSALES ========= */
+
+.orange{
+  background:#fff4e5;
+  color:#e28a00;
+}
+
+.blue{
+  background:#edf4ff;
+  color:#0b63d8;
+}
+
+.green{
+  background:#eaf8f0;
+  color:#16834b;
+}
+
+.red{
+  background:#fff0f0;
+  color:#c04343;
+}
+
+.purple{
+  background:#f2eaff;
+  color:#7c3aed;
+}
+
+.yellow{
+  background:#fff7d6;
+  color:#c98a00;
+}
+
+.gray{
+  background:#eef2f7;
+  color:#6b7280;
+}
+
+/* ========= ICONOS ========= */
+
+.expense-icon{
+
+  width:40px;
+  height:40px;
+
+  min-width:40px;
+
+  border-radius:12px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  margin-right:12px;
+
+  background:#f0f2f6;
+
+}
+
+.expense-icon ion-icon{
+  font-size:21px;
+}
+
+/* ===== CARD BASE ===== */
+
+.expense-card{
+
+  --background:#ffffff;
+  --color:#111827;
+
+  --padding-start:14px;
+  --padding-end:14px;
+  --inner-padding-end:14px;
+
+  border-radius:18px;
+
+  margin-bottom:11px;
+
+  box-shadow:
+    0 8px 22px
+    rgba(0,0,0,.035);
+
+  background:#ffffff !important;
+
+}
+
+/* ========= CHIPS ========= */
+
+.category-chip{
+
+  --background:transparent;
+
+  padding:4px 10px;
+
+  border-radius:999px;
+
+  font-size:10px;
+  font-weight:600;
+
+  margin:0;
+}
+
+/* ==========================================================================
+   ALERTA DE ELIMINACIÓN PREMIUM
+   ========================================================================== */
+.alerta-gasto-premium {
+  --background: #ffffff;
+  --backdrop-opacity: 0.55;
+  
+  .alert-wrapper {
+    border-radius: 20px !important;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12) !important;
+    padding: 8px;
+    background: #ffffff;
+  }
+
+  /* Encabezado */
+  .alert-head {
+    padding-bottom: 8px;
+    text-align: center;
+
+    h2.alert-title {
+      color: #1f2937; /* Gris oscuro elegante */
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+  }
+
+  /* Mensaje de descripción */
+  .alert-message {
+    color: #4b5563;
+    font-size: 14px;
+    text-align: center;
+    padding-bottom: 20px;
+    line-height: 1.4;
+  }
+
+  /* Contenedor de los Botones */
+  .alert-button-group {
+    padding: 0 8px 8px 8px;
+    gap: 10px;
+    display: flex;
+    flex-direction: row; /* Los alinea lado a lado de forma moderna */
+    
+    button {
+      flex: 1;
+      height: 44px;
+      border-radius: 12px !important;
+      font-size: 14px !important;
+      font-weight: 600 !important;
+      text-transform: none !important; /* Quita las mayúsculas robóticas */
+      transition: all 0.2s ease-in-out;
+    }
+  }
+
+  /* Botón Cancelar (No) */
+  .btn-cancelar {
+    background: #f3f4f6 !important;
+    color: #4b5563 !important;
+    
+    &:active {
+      background: #e5e7eb !important;
+    }
+  }
+
+  /* Botón Eliminar (Sí) */
+  .btn-eliminar {
+    background: #ef4444 !important; /* Rojo vibrante de peligro */
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25);
+
+    &:active {
+      background: #dc2626 !important;
+    }
+  }
+
+  /* ==========================================================================
+   POPOVER SELECT CATEGORÍAS PREMIUM
+   ========================================================================== */
+.popover-viewport {
+  border-radius: 16px !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12) !important;
+}
+
+ion-popover {
+  --background: #ffffff;
+  --backdrop-opacity: 0.3;
+  
+  /* Estilos para la lista interna del popover */
+  ion-list {
+    background: #ffffff !important;
+    padding: 6px !important;
+  }
+
+  /* Estilizado de cada opción (Item) */
+  ion-item {
+    --background: transparent !important;
+    --background-hover: #f3f4f6 !important;
+    --background-active: #e5e7eb !important;
+    --padding-start: 12px !important;
+    --padding-end: 12px !important;
+    --inner-padding-end: 0 !important;
+    border-radius: 10px !important;
+    margin-bottom: 2px !important;
+    transition: all 0.2s ease-in-out !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    color: #374151 !important; /* Gris elegante */
+
+    /* Quita las líneas separadoras feas por defecto */
+    &::part(native) {
+      border: none !important;
+      height: 44px !important;
+    }
+  }
+
+  /* Estilo cuando la opción está seleccionada */
+  .select-interface-option-num-selected {
+    --background: #f0fdf4 !important; /* Fondo verde sutil o puedes usar el color de tu app */
+    color: #16a34a !important; /* Texto verde oscuro */
+    font-weight: 600 !important;
+    
+    ion-radio {
+      --color-checked: #16a34a !important;
+    }
+  }
+}
+
+/* 🟢 Extra: Estilizado del botón del select dentro de tu formulario */
+.select-categoria-premium {
+  width: 100%;
+  font-size: 15px;
+  font-weight: 500;
+  color: #1f2937;
+  
+  &::part(placeholder) {
+    color: #9ca3af;
+    opacity: 1;
+  }
+
+  &::part(icon) {
+    color: #6b7280;
+    font-size: 18px;
+    opacity: 0.8;
+    transition: transform 0.2s ease;
+  }
+}
+}
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+@import '@ionic/angular/css/palettes/dark.system.css';
+

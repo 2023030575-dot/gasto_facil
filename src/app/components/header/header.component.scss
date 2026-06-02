@@ -1,0 +1,44 @@
+ion-toolbar{
+  --background: white;
+  padding: 10px 8px;
+}
+
+.header-container{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.left-side{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.avatar{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:#eef4ff;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  ion-icon{
+    font-size:22px;
+    color:#2563eb;
+  }
+}
+
+h1{
+  font-size:1.4rem;
+  font-weight:700;
+  color:#2563eb;
+  margin:0;
+}
+
+ion-button{
+  --color:#4b5563;
+}
+

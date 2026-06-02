@@ -1,0 +1,183 @@
+  <!-- BOTÓN FLOTANTE -->
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button (click)="NewGasto()">
+        <ion-icon name="add-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+<ion-content class="gastos-content">
+
+  <div class="gastos-container">
+
+    <!-- TÍTULO -->
+    <section class="title-section">
+      <h1>Mis gastos</h1>
+    </section>
+
+    <!-- BUSCADOR -->
+    <section class="search-box">
+      <ion-icon name="search-outline"></ion-icon>
+
+      <input
+        type="text"
+        placeholder="¿En qué gastaste hoy?"
+        (input)="buscarGasto($event)"
+      />
+    </section>
+
+    <!-- FILTROS -->
+    <section class="filters">
+
+      <button
+        class="filter-btn"
+        *ngFor="let filtro of filtros"
+        [class.active]="filtroActivo === filtro"
+        (click)="filtrarGastos(filtro)">
+
+        <ion-icon
+          *ngIf="filtro === 'Fecha'"
+          name="calendar-outline">
+        </ion-icon>
+
+        {{ filtro }}
+
+      </button>
+
+    </section>
+
+<section class="expenses-list">
+
+  <ion-list lines="none">
+
+    <ion-item-sliding
+      *ngFor="
+        let gasto
+        of gastosFiltrados()
+      ">
+
+      <ion-item class="expense-card">
+
+        <ion-avatar
+          slot="start"
+
+          class="expense-icon"
+
+          [ngClass]="
+            categoriaUI.obtenerCategoriaInfo(
+              gasto.categorias
+              .nombre_categoria
+            ).color
+          ">
+
+          <ion-icon
+
+            [name]="
+              categoriaUI.obtenerCategoriaInfo(
+                gasto.categorias
+                .nombre_categoria
+              ).icono
+            ">
+
+          </ion-icon>
+
+        </ion-avatar>
+
+        <ion-label>
+
+          <div class="expense-main">
+
+            <h2>
+
+              {{ gasto.concepto }}
+
+            </h2>
+
+            <span>
+
+              ${{ gasto.monto }}
+
+            </span>
+
+          </div>
+
+          <div class="expense-detail">
+
+            <ion-chip
+
+              class="category-chip"
+
+              [ngClass]="
+                categoriaUI.obtenerCategoriaInfo(
+                  gasto.categorias
+                  .nombre_categoria
+                ).color + '-tag'
+              ">
+
+              <ion-label>
+
+                {{
+                  gasto.categorias
+                  .nombre_categoria
+                }}
+
+              </ion-label>
+
+            </ion-chip>
+
+            <small>
+
+              {{ gasto.fecha_gasto }}
+
+            </small>
+
+          </div>
+
+        </ion-label>
+
+      </ion-item>
+
+      <ion-item-options side="end">
+
+        <ion-item-option
+          color="primary"
+          (click)="editarGasto(gasto)">
+
+          <ion-icon
+            name="create-outline">
+          </ion-icon>
+
+        </ion-item-option>
+
+        <ion-item-option
+          color="danger"
+          (click)="presentAlert(gasto)">
+
+          <ion-icon
+            name="trash-outline">
+          </ion-icon>
+
+        </ion-item-option>
+
+      </ion-item-options>
+
+    </ion-item-sliding>
+
+  </ion-list>
+
+</section>
+    <!-- MENSAJE INFERIOR -->
+    <section class="empty-message">
+      <div class="empty-circle">
+        <ion-icon name="receipt-outline"></ion-icon>
+      </div>
+
+      <p>¿No encuentras lo que buscas?</p>
+      <p>Puedes usar los filtros</p>
+      
+    </section>
+
+  
+
+  </div>
+
+</ion-content>

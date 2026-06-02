@@ -1,0 +1,110 @@
+<ion-content class="resume-content">
+
+  <div class="resume-container">
+
+    <!-- TÍTULO -->
+    <section class="title-section">
+      <h1>Resumen</h1>
+      <p>Análisis de tus finanzas este mes</p>
+    </section>
+
+    <!-- TOTAL ACUMULADO -->
+    <section class="total-card">
+      <p>TOTAL ACUMULADO</p>
+      <h2>${{ total | number:'1.2-2' }}</h2>
+
+      <!-- <span>
+        ↗️ 8% más que el mes pasado
+      </span> --> 
+    </section>
+
+    <!-- GRÁFICA -->
+    <section class="chart-card">
+
+      <div class="donut-chart" [style.background]="donutStyle">
+        <div class="donut-center">
+          <p>Gastos</p>
+          <strong>100%</strong>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- CATEGORÍA PRINCIPAL -->
+    <section class="top-category-card">
+
+      <!-- <div class="category-icon">
+         <ion-icon name="restaurant-outline"></ion-icon> 
+      </div> -->
+
+      <p>Categoría con más gastos</p>
+      @if (topCategoria) {
+        <h3>
+          {{ topCategoria.categoria }} ({{ topCategoria.porcentaje | number:'1.0-0' }}%)
+        </h3>
+      } @else {
+        <h3>No hay datos suficientes</h3>
+      }
+
+      <div class="progress-track">
+        <div class="progress-fill"></div>
+      </div>
+
+    </section>
+
+    <!-- DESGLOSE -->
+  <section class="breakdown-section">
+
+  <h2>DESGLOSE POR CATEGORÍA</h2>
+
+  @for (item of desglose; track item.categoria) {
+
+    <div class="category-row">
+
+      <div
+        class="row-icon"
+        [ngClass]="
+          categoriaUI.obtenerCategoriaInfo(item.categoria).color
+        ">
+
+        <ion-icon
+          [name]="
+            categoriaUI.obtenerCategoriaInfo(item.categoria).icono
+          ">
+        </ion-icon>
+
+      </div>
+
+      <div class="row-info">
+        <h3>{{ item.categoria }}</h3>
+        <p>{{ item.porcentaje | number:'1.0-0' }}% del total</p>
+      </div>
+
+      <span>${{ item.monto }}</span>
+
+    </div>
+
+  }
+
+</section>
+
+    <!-- MENSAJE FINAL -->
+    <!-- <section class="advice-card">
+
+      <div class="advice-text">
+        <h3>¡Vas por buen camino!</h3>
+        <p>
+          Has ahorrado un 12% comparado con la semana anterior.
+          Mantén el enfoque en tu categoría de Comida.
+        </p>
+      </div>
+
+      <div class="advice-figure">
+        <div class="coin"></div>
+      </div>
+
+    </section> -->
+
+  </div>
+
+</ion-content>

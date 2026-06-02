@@ -1,0 +1,41 @@
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+
+    <ion-tab-button
+      [class.active]="rutaActual === '/home'"
+      (click)="irHome()">
+
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>Inicio</ion-label>
+
+    </ion-tab-button>
+
+    <ion-tab-button
+      [class.active]="rutaActual === '/page-gastos'"
+      (click)="irGastos()">
+
+      <ion-icon name="wallet-outline"></ion-icon>
+      <ion-label>Gastos</ion-label>
+
+    </ion-tab-button>
+
+    <ion-tab-button
+      [class.active]="rutaActual === '/page-scan'"
+      (click)="irScan()">
+
+      <ion-icon name="scan-outline"></ion-icon>
+      <ion-label>Escanear</ion-label>
+
+    </ion-tab-button>
+
+    <ion-tab-button
+      [class.active]="rutaActual === '/page-resume'"
+      (click)="irResume()">
+
+      <ion-icon name="bar-chart-outline"></ion-icon>
+      <ion-label>Resumen</ion-label>
+
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs>

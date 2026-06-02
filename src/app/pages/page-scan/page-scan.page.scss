@@ -1,0 +1,378 @@
+.scan-content {
+  --background: #f5f7fb;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/*
+  Padding pensado para header y tabs fijos.
+  Si se corta arriba, sube 82px a 90px.
+*/
+.scan-container {
+  padding: 82px 30px 135px;
+}
+
+/* =========================
+   TARJETA DEL ESCÁNER
+========================= */
+
+.scanner-card {
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.scanner-scene {
+  position: relative;
+  height: 310px;
+  border-radius: 24px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at center, rgba(0, 190, 190, 0.18), transparent 28%),
+    linear-gradient(180deg, #071d20 0%, #102f33 48%, #d8dde1 49%, #aeb6ba 100%);
+  box-shadow: 0 12px 26px rgba(17, 24, 39, 0.12);
+}
+
+/* Fondo tipo mesa */
+.scanner-scene::after {
+  content: '';
+  position: absolute;
+  left: -20%;
+  right: -20%;
+  bottom: -20px;
+  height: 145px;
+  background: repeating-linear-gradient(
+    160deg,
+    rgba(255, 255, 255, 0.18) 0,
+    rgba(255, 255, 255, 0.18) 5px,
+    rgba(180, 190, 195, 0.18) 7px,
+    rgba(180, 190, 195, 0.18) 13px
+  );
+  transform: rotate(-5deg);
+}
+
+/* Teléfono decorativo */
+.phone-frame {
+  position: absolute;
+  left: 50%;
+  top: 50px;
+  width: 125px;
+  height: 205px;
+  transform: translateX(-50%);
+  border: 3px solid rgba(17, 24, 39, 0.85);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.05);
+  z-index: 2;
+  box-shadow:
+    0 0 0 2px rgba(255, 255, 255, 0.12),
+    0 0 22px rgba(26, 216, 214, 0.55);
+}
+
+.phone-notch {
+  width: 46px;
+  height: 8px;
+  background: #0d171a;
+  border-radius: 0 0 10px 10px;
+  margin: 0 auto;
+}
+
+/* Ticket */
+.ticket-paper {
+  position: absolute;
+  left: 50%;
+  top: 70px;
+  width: 74px;
+  min-height: 118px;
+  transform: translateX(-50%) rotate(-2deg);
+  background: #eef2f2;
+  border-radius: 2px;
+  padding: 10px 8px;
+  z-index: 4;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.28);
+}
+
+.ticket-paper span {
+  display: block;
+  height: 4px;
+  margin-bottom: 7px;
+  border-radius: 6px;
+  background: #8b969e;
+}
+
+.ticket-paper span:nth-child(1) {
+  width: 80%;
+}
+
+.ticket-paper span:nth-child(2) {
+  width: 100%;
+}
+
+.ticket-paper span:nth-child(3) {
+  width: 70%;
+}
+
+.ticket-paper span:nth-child(4) {
+  width: 95%;
+}
+
+.ticket-paper span:nth-child(5) {
+  width: 60%;
+}
+
+/* Recuadro azul de escaneo */
+.scan-corners {
+  position: absolute;
+  left: 38px;
+  right: 38px;
+  top: 72px;
+  bottom: 72px;
+  z-index: 6;
+}
+
+.corner {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border-color: #0066df;
+}
+
+.top-left {
+  top: 0;
+  left: 0;
+  border-top: 3px solid #0066df;
+  border-left: 3px solid #0066df;
+  border-radius: 18px 0 0 0;
+}
+
+.top-right {
+  top: 0;
+  right: 0;
+  border-top: 3px solid #0066df;
+  border-right: 3px solid #0066df;
+  border-radius: 0 18px 0 0;
+}
+
+.bottom-left {
+  bottom: 0;
+  left: 0;
+  border-bottom: 3px solid #0066df;
+  border-left: 3px solid #0066df;
+  border-radius: 0 0 0 18px;
+}
+
+.bottom-right {
+  bottom: 0;
+  right: 0;
+  border-bottom: 3px solid #0066df;
+  border-right: 3px solid #0066df;
+  border-radius: 0 0 18px 0;
+}
+
+.scan-line {
+  position: absolute;
+  left: 35px;
+  right: 35px;
+  top: 170px;
+  height: 3px;
+  background: #0066df;
+  z-index: 7;
+  box-shadow: 0 0 14px rgba(0, 102, 223, 0.9);
+}
+
+/* Texto sobre imagen */
+.scan-label {
+  position: absolute;
+  left: 50%;
+  bottom: 42px;
+  transform: translateX(-50%);
+  z-index: 8;
+  background: rgba(30, 30, 30, 0.72);
+  color: #ffffff;
+  padding: 9px 18px;
+  border-radius: 22px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* =========================
+   BOTONES TOMAR FOTO / GALERÍA
+========================= */
+
+.scan-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.primary-btn,
+.secondary-btn {
+  height: 50px;
+  border-radius: 26px;
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+}
+
+.primary-btn {
+  border: none;
+  background: #005bd8;
+  color: #ffffff;
+  box-shadow: 0 8px 16px rgba(0, 91, 216, 0.25);
+}
+
+.secondary-btn {
+  border: 1px solid #d0d6df;
+  background: #ffffff;
+  color: #005bd8;
+}
+
+.primary-btn ion-icon,
+.secondary-btn ion-icon {
+  font-size: 20px;
+}
+
+/* =========================
+   CAPTURA RECIENTE
+========================= */
+
+.recent-capture {
+  min-height: 74px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.035);
+}
+
+.capture-preview {
+  width: 48px;
+  height: 56px;
+  min-width: 48px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #fafafa, #d7d7d7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 14px;
+}
+
+.capture-preview ion-icon {
+  font-size: 30px;
+  color: #9ca3af;
+}
+
+.capture-info {
+  flex: 1;
+}
+
+.capture-info h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: #111827;
+}
+
+.capture-info p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #4b5563;
+}
+
+.delete-btn {
+  width: 34px;
+  height: 34px;
+  border: none;
+  background: transparent;
+  color: #e52627;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-btn ion-icon {
+  font-size: 20px;
+}
+
+/* =========================
+   BOTÓN ANALIZAR IA
+========================= */
+
+.analyze-btn {
+  width: 100%;
+  height: 56px;
+  border: none;
+  border-radius: 26px;
+  background: #83f4a7;
+  color: #078046;
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-bottom: 22px;
+  box-shadow: 0 8px 16px rgba(0, 180, 90, 0.12);
+}
+
+.analyze-btn ion-icon {
+  font-size: 20px;
+  color: #0066df;
+}
+
+/* =========================
+   MENSAJE IA
+========================= */
+
+.ia-message {
+  text-align: center;
+  color: #9aa3af;
+}
+
+.ia-message p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.45;
+  font-style: italic;
+}
+
+/* =========================
+   AJUSTE PARA TELÉFONOS PEQUEÑOS
+========================= */
+
+@media (max-width: 380px) {
+  .scan-container {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .scanner-scene {
+    height: 295px;
+  }
+
+  .scan-label {
+    font-size: 13px;
+    padding: 8px 14px;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    font-size: 14px;
+  }
+}
+
+.analyze-btn {
+  --background: #83f4a7;
+  --color: #078046;
+  --border-radius: 26px;
+  --box-shadow: 0 8px 16px rgba(0, 180, 90, 0.12);
+  --ripple-color: rgba(0, 0, 0, 0.1);
+  height: 56px;
+  font-size: 15px;
+  font-weight: 600;
+}
+

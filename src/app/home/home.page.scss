@@ -1,27 +1,345 @@
-#container {
-  text-align: center;
+.home-content {
+  --background: #f5f7fb;
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  /*
+    Espacio para que el contenido no se meta debajo
+    del header fijo que hicieron tus compañeros.
+  */
+  --padding-top: 78px;
+  --padding-bottom: 115px;
+
+  font-family: 'Segoe UI', sans-serif;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.home-container {
+  padding: 22px 14px 125px;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+/* =========================
+   TARJETA TOTAL DEL MES
+========================= */
 
-  color: #8c8c8c;
+.total-card {
+  background: linear-gradient(135deg, #0b63d8, #4778ef);
+  border-radius: 28px;
+  padding: 24px 22px;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0 0 24px;
+  box-shadow: 0 12px 25px rgba(0, 91, 216, 0.22);
+}
 
+.total-card p {
+  margin: 0 0 8px;
+  font-size: 15px;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.total-card h1 {
   margin: 0;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 2px;
 }
 
-#container a {
+.total-card ion-icon {
+  font-size: 27px;
+  margin-top: 18px;
+  color: #ffffff;
+}
+
+.badge {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.18);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* =========================
+   TARJETAS PEQUEÑAS (ADAPTADAS A IONIC)
+========================= */
+
+/* Contenedor de la rejilla para dar el margen inferior que tenías */
+.summary-grid-container {
+  margin-bottom: 26px;
+}
+
+/* Forzamos a que las columnas tengan un espaciado (gap) limpio entre ellas */
+ion-col {
+  padding: 0 6.5px; /* Mitad de tus 13px de gap originales para que sumen exacto */
+}
+
+ion-col:first-child {
+  padding-left: 0; /* Limpia el borde izquierdo de la pantalla */
+}
+
+ion-col:last-child {
+  padding-right: 0; /* Limpia el borde derecho de la pantalla */
+}
+
+/* Modificamos tu .summary-card para domar al <ion-card> nativo */
+.summary-card {
+  --background: #ffffff; /* Propiedad custom de Ionic para fondos */
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 12px 4px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 88px;
+  margin: 0; /* Quitamos el margen gigante que mete Ionic por defecto */
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.04); /* Respetamos tu sombra exacta */
+}
+
+.icon-box {
+  width: 30px;
+  height: 30px;
+  margin: 0 auto 6px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-box ion-icon {
+  font-size: 18px;
+}
+
+.icon-box.blue {
+  color: #0b63d8;
+}
+
+.icon-box.green {
+  color: #087a3e;
+}
+
+.icon-box.red {
+  color: #b73636;
+}
+
+/* Adaptado para la etiqueta nativa <ion-card-subtitle> */
+.summary-card ion-card-subtitle {
+  margin: 0;
+  font-size: 10px;
+  color: #2d3340;
+  text-transform: none; /* Evitamos que Ionic lo ponga en mayúsculas sostenidas */
+  font-weight: normal;
+  letter-spacing: normal;
+}
+
+/* Adaptado para la etiqueta nativa <ion-card-title> */
+.summary-card ion-card-title {
+  margin: 3px 0 0;
+  font-size: 11px;
+  color: #0b63d8;
+  font-weight: 700;
+}
+
+/* Cambiamos el color de la tercera columna al color rojo de tu diseño */
+ion-col:nth-child(3) .summary-card ion-card-title {
+  color: #b73636;
+}
+
+/* =========================
+   ESCANEAR TICKET
+========================= */
+
+.scan-card {
+  background: #eef0f4;
+  border-radius: 22px;
+  padding: 14px;
+  min-height: 66px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.scan-icon {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 50%;
+  background: #e2eaf7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+}
+
+.scan-icon ion-icon {
+  color: #0b63d8;
+  font-size: 20px;
+}
+
+.scan-info {
+  flex: 1;
+}
+
+.scan-info h2 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: #101828;
+}
+
+.scan-info p {
+  margin: 3px 0 0;
+  font-size: 11px;
+  color: #333d4f;
+}
+
+.arrow {
+  color: #606a78;
+  font-size: 18px;
+}
+
+/* =========================
+   GASTOS RECIENTES
+========================= */
+
+.recent-section {
+  margin-top: 4px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.section-header a {
   text-decoration: none;
+  color: #0b63d8;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.expense-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 12px;
+  min-height: 62px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 11px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.035);
+}
+
+ion-list {
+  background: transparent;
+  padding: 0;
+}
+
+ion-item {
+  --background: transparent;
+}
+
+.expense-icon {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 12px;
+  background: #f0f2f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+}
+
+.expense-icon ion-icon {
+  font-size: 20px;
+}
+
+.expense-info {
+  flex: 1;
+}
+
+.expense-info h3 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.expense-info p {
+  margin: 3px 0 0;
+  font-size: 10px;
+  color: #4b5563;
+}
+
+.expense-card span {
+  font-size: 12px;
+  font-weight: 700;
+  color: #b91c1c;
+}
+
+.expenses-list ion-list {
+  background: transparent;
+  padding: 0;
+}
+
+/* =========================
+   MENSAJE DECORATIVO
+========================= */
+
+.saving-message {
+  text-align: center;
+  margin-top: 24px;
+  color: #a0a7b3;
+}
+
+.circle {
+  width: 108px;
+  height: 108px;
+  background: #eef6f6;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle ion-icon {
+  font-size: 46px;
+  color: #b7dcdd;
+}
+
+.saving-message p {
+  width: 82%;
+  margin: 0 auto;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+/* =========================
+   BOTÓN FLOTANTE
+========================= */
+
+.add-button {
+  bottom: 92px;
+  right: 10px;
+}
+
+.add-button ion-fab-button {
+  width: 56px;
+  height: 56px;
+  --background: #005bd8;
+  --background-activated: #0047ac;
+  --box-shadow: 0 8px 18px rgba(0, 91, 216, 0.35);
 }

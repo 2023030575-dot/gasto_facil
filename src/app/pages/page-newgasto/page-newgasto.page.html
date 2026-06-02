@@ -1,0 +1,166 @@
+<ion-content class="newgasto-content">
+  <div class="newgasto-container">
+
+    <section class="title-section">
+      <h1>{{ titulo() }}</h1>
+      <p>Registra manualmente un gasto</p>
+    </section>
+
+    <form class="gasto-form" [formGroup]="form" (ngSubmit)="guardarGasto()">
+
+      <section class="form-card">
+        <label>Establecimiento *</label>
+        <div class="input-box" [class.input-invalid]="form.get('establecimiento')?.invalid && form.get('establecimiento')?.touched">
+          <ion-icon name="business-outline"></ion-icon>
+          <ion-input
+            type="text"
+            formControlName="establecimiento"
+            placeholder="Ej. Walmart, OXXO">
+          </ion-input>
+        </div>
+      </section>
+
+      <section class="form-card">
+        <label>Concepto / Descripción *</label>
+        <div class="input-box" [class.input-invalid]="form.get('concepto')?.invalid && form.get('concepto')?.touched">
+          <ion-icon name="document-text-outline"></ion-icon>
+          <ion-input
+            type="text"
+            formControlName="concepto"
+            placeholder="Ej. Compra de despensa">
+          </ion-input>
+        </div>
+      </section>
+
+      <section class="form-card">
+        <label>Monto total *</label>
+        <div class="input-box amount-box" [class.input-invalid]="form.get('monto')?.invalid && form.get('monto')?.touched">
+          <ion-icon name="cash-outline"></ion-icon>
+          <ion-input
+            type="number"
+            formControlName="monto"
+            placeholder="0.00">
+          </ion-input>
+        </div>
+      </section>
+
+      <section class="form-card">
+        <label>Categoría *</label>
+        <div class="input-box" [class.input-invalid]="form.get('id_categoria')?.invalid && form.get('id_categoria')?.touched">
+          <ion-icon name="pricetag-outline"></ion-icon>
+          <ion-select 
+            mode="ios"
+            class="select-categoria-premium"
+            formControlName="id_categoria"
+            placeholder="Selecciona una categoría"
+            interface="popover">
+            <ion-select-option [value]="1">Comida</ion-select-option>
+            <ion-select-option [value]="2">Transporte</ion-select-option>
+            <ion-select-option [value]="3">Salud</ion-select-option>
+            <ion-select-option [value]="4">Servicios</ion-select-option>
+            <ion-select-option [value]="5">Entretenimiento</ion-select-option>
+            <ion-select-option [value]="6">Educación</ion-select-option>
+          </ion-select>
+        </div>
+      </section>
+
+      <section class="form-card">
+        <label>Fecha *</label>
+        <div class="input-box" [class.input-invalid]="form.get('fecha_gasto')?.invalid && form.get('fecha_gasto')?.touched">
+          <ion-icon name="calendar-outline"></ion-icon>
+          <ion-input
+            type="date"
+            formControlName="fecha_gasto">
+          </ion-input>
+        </div>
+      </section>
+
+      <section class="form-card">
+        <label>Método de pago *</label>
+        <div class="metodo-pago-container">
+          
+          <button 
+            type="button" 
+            class="pago-chip" 
+            [class.pago-activo]="form.get('metodo_pago')?.value === 'EFECTIVO'"
+            (click)="form.get('metodo_pago')?.setValue('EFECTIVO')">
+            Efectivo
+          </button>
+
+          <button 
+            type="button" 
+            class="pago-chip" 
+            [class.pago-activo]="form.get('metodo_pago')?.value === 'TARJETA DEBITO'"
+            (click)="form.get('metodo_pago')?.setValue('TARJETA DEBITO')">
+            Debito
+          </button>
+
+          <button 
+            type="button" 
+            class="pago-chip" 
+            [class.pago-activo]="form.get('metodo_pago')?.value === 'TARJETA CREDITO'"
+            (click)="form.get('metodo_pago')?.setValue('TARJETA CREDITO')">
+            Crédito
+          </button>
+
+        </div>
+        <input type="hidden" formControlName="metodo_pago">
+      </section>
+
+      <section class="form-card">
+        <label>Notas</label>
+        <div class="textarea-box">
+          <ion-textarea
+            formControlName="notas"
+            placeholder="Agrega una nota opcional"
+            rows="4">
+          </ion-textarea>
+        </div>
+      </section>
+
+      @if (error()) {
+        <div class="server-error-box">
+          <ion-text color="danger">
+            <p>{{ error() }}</p>
+          </ion-text>
+        </div>
+      }
+
+      <section class="buttons-section">
+        <ion-button
+          expand="block"
+          type="submit"
+          class="save-btn"
+          [disabled]="guardando()">
+          @if (guardando()) {
+            Guardando...
+          } @else {
+            Guardar
+          }
+        </ion-button>
+
+        <ion-button
+          expand="block"
+          fill="outline"
+          type="button"
+          class="cancel-btn"
+          routerLink="/page-gastos">
+          Cancelar
+        </ion-button>
+      </section>
+
+      <section class="scan-help-card">
+        <p>
+          Puedes ingresar el gasto manualmente<br>
+          o escanear un ticket para que la IA lo<br>
+          haga por ti.
+        </p>
+        <ion-button routerLink="/page-scan" fill="clear" type="button" class="scan-ticket-btn">
+          <ion-icon name="scan-outline" slot="start"></ion-icon>
+          Escanear ticket
+        </ion-button>
+      </section>
+
+    </form>
+  </div>
+</ion-content>
