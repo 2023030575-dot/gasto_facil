@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 
 const env = {
   geminiApiKey: process.env.GEMINI_API_KEY,
@@ -6,9 +7,11 @@ const env = {
   supabaseKey: process.env.SUPABASE_KEY
 };
 
-fs.writeFileSync(
-  './src/assets/env.json',
-  JSON.stringify(env, null, 2)
-);
+// ❌ NO dentro de src
+const outputPath = path.join(__dirname, 'dist/env.json');
 
-console.log('env.json generado');
+fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+
+fs.writeFileSync(outputPath, JSON.stringify(env, null, 2));
+
+console.log('env.json generado en dist');
