@@ -1,5 +1,5 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { FormsModule,ReactiveFormsModule, NonNullableFormBuilder, Validators } from '@angular/forms';
 import { IonContent,IonText, IonHeader, IonTitle, IonToolbar,IonIcon,
   IonInput,
@@ -27,11 +27,7 @@ import { Gastofacil } from '../../services/gastofacil';
   templateUrl: './page-newgasto.page.html',
   styleUrls: ['./page-newgasto.page.scss'],
   standalone: true,
-  imports: [IonContent,IonText,RouterLink, IonInput,ReactiveFormsModule,
-  IonSelect,
-  IonSelectOption,
-  IonTextarea,
-  IonButton,IonIcon,CommonModule, FormsModule]
+  imports: [IonContent, IonText, RouterLink, IonInput, ReactiveFormsModule, IonSelect, IonSelectOption, IonTextarea, IonButton, IonIcon, FormsModule]
 })
 export class PageNewgastoPage implements OnInit {
   titulo = signal('Nuevo gasto');

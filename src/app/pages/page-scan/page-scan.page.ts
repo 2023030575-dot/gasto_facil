@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Camera,CameraResultType, CameraSource} from '@capacitor/camera';
@@ -27,7 +27,6 @@ import { GastoEscaneado } from 'src/app/models/gasto-escaneado.model';
   styleUrls: ['./page-scan.page.scss'],
   standalone: true,
   imports: [
-    CommonModule,
     FormsModule,
     IonContent,
     IonIcon,
